@@ -38,9 +38,9 @@ class Meal {
   }
 
   customers() {
-    return store.customers.filter(customer => {
-      return customer.mealId == this.id;
-    })
+    return this.deliveries().map(delivery => {
+      return delivery.customer();
+    });
   };
 
   deliveries() {
@@ -69,15 +69,12 @@ class Customer {
   };
 
   meals() {
-    // return store.meals.filter(meal => {
-    //   return meal.deliveryId == this.deliveryId;
-    // })
     return this.deliveries().map(delivery => {
       return delivery.meal();
     });
   }
 
-  
+
 
 }
 

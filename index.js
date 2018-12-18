@@ -62,6 +62,12 @@ class Customer {
     store.customers.push(this);
   }
 
+  deliveries() {
+    return store.deliveries.filter(delivery => {
+      return delivery.customerId == this.id;
+    })
+  };
+
 }
 
 class Delivery {

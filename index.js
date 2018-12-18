@@ -28,9 +28,14 @@ class Neighborhood {
   };
 
   meals() {
+
+    function onlyUnique(value, index, self) { 
+        return self.indexOf(value) === index;
+    }
+
     return this.deliveries().map(delivery => {
       return delivery.meal();
-    })
+    }).filter( onlyUnique );
   }
 
 }

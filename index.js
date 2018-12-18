@@ -79,7 +79,7 @@ class Customer {
   }
 
   totalSpent() {
-    return this.meals.reduce(function (accumulator, currentValue) {
+    return this.meals().reduce(function (accumulator, currentValue) {
   return accumulator.price + currentValue;
 }, 0);
   }

@@ -69,10 +69,15 @@ class Customer {
   };
 
   meals() {
-    return store.meals.filter(meal => {
-      return meal.deliveryId == this.deliveryId;
-    })
-  };
+    // return store.meals.filter(meal => {
+    //   return meal.deliveryId == this.deliveryId;
+    // })
+    return this.deliveries().map(delivery => {
+      return delivery.meal();
+    });
+  }
+
+  
 
 }
 

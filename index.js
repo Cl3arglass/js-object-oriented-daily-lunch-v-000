@@ -70,7 +70,7 @@ class Customer {
 
   meals() {
     return store.meals.filter(meal => {
-      return meal.deliveryId == this.id;
+      return meal.customerId == this.id;
     })
   };
 

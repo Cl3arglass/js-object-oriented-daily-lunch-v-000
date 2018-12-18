@@ -37,6 +37,18 @@ class Meal {
     store.meals.push(this);
   }
 
+  customers() {
+    return store.customers.filter(customer => {
+      return customer.mealId == this.id;
+    })
+  };
+
+  deliveries() {
+    return store.deliveries.filter(delivery => {
+      return delivery.mealId == this.id;
+    })
+  };
+
 }
 
 class Customer {
